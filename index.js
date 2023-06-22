@@ -7,12 +7,17 @@ var app = express();
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
-app.listen(8080);
+app.listen(8080);//localhost:8080
 
-//localhost:8080
 app.get('/',function(req,res){
+res.render('pages/index');
 
-res.render('pages/index.ejs');
-res.send("Hello");
+})
 
-});
+app.get('/about',function(req,res){
+    res.render('pages/about')
+})
+
+app.get('/contact',function(req,res){
+    res.render('pages/contact')
+})
